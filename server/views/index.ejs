@@ -11,11 +11,13 @@
 
 <form action ="/addIP" method="POST">
 
-<input type="text" name="newIP" placeholder="add new IP">
+<div class="container">
+<textarea rows="15" cols="48" type="text" name="newIP" placeholder="add new IP">
+</textarea>
 <button> Add IP </button>
 
 
-<h2> Added IP </h2>
+<h2> List of IP </h2>
 
 <% for( var i = 0; i < task.length; i++){ %>
     <li><input type="checkbox" name="check" value="<%= task[i] %>" /> <%= task[i] %> </li>
@@ -24,6 +26,17 @@
 <button formaction="/removeIP" type="submit" id="top"> Remove </button>
 </form>
 
+<h2> Accepted IP </h2>
+
+<% for( var i = 0; i < accepted.length; i++){ %>
+    <li><input type="checkbox" name="check" value="<%= accepted[i] %>" /> <%= accepted[i] %> </li>
+<% } %>
+
+<h2> Rejected IP </h2>
+
+<% for( var i = 0; i < rejected.length; i++){ %>
+    <li><input type="checkbox" name="check" value="<%= rejected[i] %>" /> <%= rejected[i] %> </li>
+<% } %>
 </div>
 
 </body>
